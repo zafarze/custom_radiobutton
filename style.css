@@ -1,0 +1,34 @@
+.real-radio{
+    width: 0;
+    height: 0;
+    display: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.custom-radio{
+    position: relative;
+    display:inline-block;
+    width: 16px;
+    height: 16px;
+    background:#fff;
+    border:2px solid #7e9bbd;
+    border-radius: 50%;
+    vertical-align: text-top;
+    margin-right: 5px;
+}
+.custom-radio::before{
+    content:'';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background:#1647ed;
+    border-radius:50px;
+    position: absolute;
+    left: 47%;
+    top: 3%;
+
+    transform: translate(-50%, 50%) scale(0);
+}
+.real-radio:checked + .custom-radio::before{
+    transform: translate(-50%, 50%) scale(1);
+}
